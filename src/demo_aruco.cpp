@@ -366,17 +366,15 @@ int gige_ARUCO_opencv(const Mat& cameramatrix, const Mat& distcoeffs, float aruc
                 
                 // if at least one marker detected
                 if (ids.size() > 0) {
-                    aruco::drawDetectedMarkers(frameCopy, corners, ids);
+                    // aruco::drawDetectedMarkers(frameCopy, corners, ids);
                     vector<Vec3d> rvecs, tvecs;
                     aruco::estimatePoseSingleMarkers(corners, arucoSuqareDimension, cameramatrix, distcoeffs, rvecs, tvecs);
 
-                    // draw axis for each marker
-                    for(int i=0; i<ids.size(); i++)
-                        aruco::drawAxis(frameCopy, cameramatrix, distcoeffs, rvecs[i], tvecs[i], 0.1);
-                }
-                cv::namedWindow("ARUCO");
-                imshow("ARUCO", frameCopy);
-                auto total_end = chrono::steady_clock::now();
+                    // // draw axis for each marker
+                    // for(int i=0; i<ids.size(); i++)
+                    //     aruco::drawAxis(frameCopy, cameramatrix, distcoeffs, rvecs[i], tvecs[i], 0.1);
+                    aruco::drawAxis(frameCopy, cameramatrix, distcoeffs, rvecs[0], tvecs[0], 0.1);
+                    auto total_end = chrono::steady_clock::now();
                 float total_fps_gige = 1000.0 / chrono::duration_cast<chrono::milliseconds>(total_end - total_start).count();
 
 
@@ -384,14 +382,32 @@ int gige_ARUCO_opencv(const Mat& cameramatrix, const Mat& distcoeffs, float aruc
                 stats_ss << fixed << setprecision(2);
                 stats_ss << "Total FPS: " << total_fps_gige;
                 auto stats = stats_ss.str();
-                
-
-                int baseline;
+                                int baseline;
                 auto stats_bg_sz = getTextSize(stats.c_str(), FONT_HERSHEY_COMPLEX_SMALL, 1, 1, &baseline);
                 rectangle(frame, Point(0, 0), Point(stats_bg_sz.width, stats_bg_sz.height + 10), Scalar(0, 0, 0), FILLED);
                 putText(frame, stats.c_str(), Point(0, stats_bg_sz.height + 5), FONT_HERSHEY_COMPLEX_SMALL, 1, Scalar(255, 255, 255));
 
                 cout<< stats.c_str()<<endl;
+
+                }
+                cv::namedWindow("ARUCO");
+                imshow("ARUCO", frameCopy);
+                // auto total_end = chrono::steady_clock::now();
+                // float total_fps_gige = 1000.0 / chrono::duration_cast<chrono::milliseconds>(total_end - total_start).count();
+
+
+                // std::ostringstream stats_ss;
+                // stats_ss << fixed << setprecision(2);
+                // stats_ss << "Total FPS: " << total_fps_gige;
+                // auto stats = stats_ss.str();
+                
+
+                // int baseline;
+                // auto stats_bg_sz = getTextSize(stats.c_str(), FONT_HERSHEY_COMPLEX_SMALL, 1, 1, &baseline);
+                // rectangle(frame, Point(0, 0), Point(stats_bg_sz.width, stats_bg_sz.height + 10), Scalar(0, 0, 0), FILLED);
+                // putText(frame, stats.c_str(), Point(0, stats_bg_sz.height + 5), FONT_HERSHEY_COMPLEX_SMALL, 1, Scalar(255, 255, 255));
+
+                // cout<< stats.c_str()<<endl;
                 // cv::namedWindow("Opencv Demo");
                 // imshow("Opencv Demo", frame);
 
