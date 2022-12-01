@@ -17,16 +17,13 @@ set(GIGE_CAM libMVSDK.so)
 
 
 
-# add_executable(fpsCount framerate.cpp)
-# target_link_libraries(fpsCount ${OpenCV_LIBRARIES})
-
-
-# add_executable(newfpsCount newfps.cpp)
-# target_link_libraries(newfpsCount ${OpenCV_LIBRARIES})
-
-# add_executable(gige_aruco src/gige_aruco.cpp)
-# target_link_libraries(gige_aruco ${GIGE_CAM} ${OpenCV_LIBRARIES})
-
 add_executable(demo_aruco src/demo_aruco.cpp)
 target_link_libraries(demo_aruco ${GIGE_CAM} ${OpenCV_LIBRARIES})
+
+
+add_executable(aruco_gige_cam_calibration src/aruco_gige_cam_calibration.cpp)
+target_link_libraries(aruco_gige_cam_calibration ${GIGE_CAM} ${OpenCV_LIBRARIES})
+
+# add_executable(charuco_gige_cam_calibration src/charuco_gige_cam_calibration.cpp)
+# target_link_libraries(charuco_gige_cam_calibration ${GIGE_CAM} ${OpenCV_LIBRARIES})
 
