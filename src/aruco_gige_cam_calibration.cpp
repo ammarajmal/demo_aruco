@@ -10,6 +10,7 @@
 #include "opencv2/opencv.hpp"
 #include "opencv2/aruco.hpp"
 #include "opencv2/core.hpp"
+#include <opencv2/aruco/dictionary.hpp>
 #include "opencv2/videoio/legacy/constants_c.h"
 #include "opencv2/highgui/highgui_c.h"
 
@@ -135,7 +136,7 @@ int gige_cam()
     return 0;
 }
 
-int gige_aruco_detector()
+int arucoCamCalib()
 {
 
     int                     iCameraCounts = 1;
@@ -217,9 +218,41 @@ int gige_aruco_detector()
 					sFrameInfo.uiMediaType == CAMERA_MEDIA_TYPE_MONO8 ? CV_8UC1 : CV_8UC3,
 					g_pRgbBuffer
 					);
+            Ptr<aruco::Dictionary> dictionary = aruco::Dictionary::get(aruco::DICT_ARUCO_ORIGINAL);
+            Ptr<aruco::GridBoard> board = aruco::GridBoard::create(
+                10  /* N markers x */ ,
+                7   /* M markers y */,
+                14.0f/* marker width (mm) */,
+                9.2f/* marker separation (mm) */,
+                dictionary);
+            Size imageSize = frame.size();
+            Detect charuco board from several viewpoints and fill allCharucoCorners and allCharucoIds
 
-            cv::namedWindow("Opencv Demo");
-			imshow("Opencv Demo", frame);
+           
+
+
+
+            
+            // Mat boardImage;
+            // board->draw(Size(1000, 700), boardImage, 25);
+            // cv::imwrite("ArucoBoard.jpg", boardImage);
+            // cv::Mat frameCopy;
+            // frame.copyTo(frameCopy);
+            // vector<int> ids;
+            // vector<vector<Point2f> > corners;
+            // aruco::detectMarkers(frame, dictionary, corners, ids);
+            // aruco::drawDetectedMarkers(frameCopy, corners, ids);
+            
+            // Detect charuco board from several viewpoints and fill allCharucoCorners and allCharucoIds
+            
+
+
+
+
+
+
+            // cv::namedWindow("Opencv Demo");
+			// imshow("Opencv Demo", frame);
 
             int key = cv::waitKey(1);
             if (key == 27) // ESP stop
@@ -268,19 +301,11 @@ void markderDetector(){
     }
 }
 
-void arucoCamCalib(){
-    Ptr<aruco::Dictionary> dict = aruco::Dictionary::get(aruco::DICT_ARUCO_ORIGINAL);
-//     Ptr<aruco::GridBoard> board = aruco::GridBoard::create(
-//         10  /* N markers x */ ,
-//         7   /* M markers y */,
-//         0.04/* marker width (mm) */,
-//         0.01/* marker separation (mm) */,
-//         dict);
-}
 
 int main(int, char**)
 {
-    gige_aruco_detector();
+    // gige_aruco_detector();
+    arucoCamCalib();
 
     // markderDetector();
 

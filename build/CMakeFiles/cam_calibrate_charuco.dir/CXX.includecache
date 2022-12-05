@@ -6,47 +6,21 @@
 
 #IncludeRegexTransform: 
 
-../include/CameraApi.h
-CameraDefine.h
-../include/CameraDefine.h
-CameraStatus.h
-../include/CameraStatus.h
-
-../include/CameraDefine.h
-CameraStatus.h
-../include/CameraStatus.h
-
-../include/CameraStatus.h
-
-/home/ammar/sitl_agcam/demo_aruco/src/aruco_gige_cam_calibration.cpp
-CameraApi.h
-/home/ammar/sitl_agcam/demo_aruco/src/CameraApi.h
-iomanip
+/home/ammar/sitl_agcam/demo_aruco/src/cam_calibrate_charuco.cpp
+opencv2/highgui.hpp
 -
-stdio.h
+opencv2/calib3d.hpp
+-
+opencv2/aruco/charuco.hpp
+-
+opencv2/imgproc.hpp
+-
+vector
 -
 iostream
 -
-opencv2/imgcodecs.hpp
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/imgcodecs.hpp
-opencv2/imgproc.hpp
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/imgproc.hpp
-opencv2/highgui.hpp
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/highgui.hpp
-opencv2/calib3d.hpp
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/calib3d.hpp
-opencv2/opencv.hpp
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/opencv.hpp
-opencv2/aruco.hpp
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/aruco.hpp
-opencv2/core.hpp
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/core.hpp
-opencv2/aruco/dictionary.hpp
+ctime
 -
-opencv2/videoio/legacy/constants_c.h
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/videoio/legacy/constants_c.h
-opencv2/highgui/highgui_c.h
-/home/ammar/sitl_agcam/demo_aruco/src/opencv2/highgui/highgui_c.h
 
 /usr/include/opencv4/opencv2/aruco.hpp
 opencv2/core.hpp
@@ -55,6 +29,14 @@ vector
 -
 opencv2/aruco/dictionary.hpp
 /usr/include/opencv4/opencv2/opencv2/aruco/dictionary.hpp
+
+/usr/include/opencv4/opencv2/aruco/charuco.hpp
+opencv2/core.hpp
+-
+vector
+-
+opencv2/aruco.hpp
+-
 
 /usr/include/opencv4/opencv2/aruco/dictionary.hpp
 opencv2/core.hpp
@@ -131,16 +113,6 @@ opencv2/core/check.hpp
 /usr/include/opencv4/opencv2/core/check.hpp
 opencv2/core/base.hpp
 -
-
-/usr/include/opencv4/opencv2/core/core_c.h
-opencv2/core/types_c.h
-/usr/include/opencv4/opencv2/core/opencv2/core/types_c.h
-cxcore.h
-/usr/include/opencv4/opencv2/core/cxcore.h
-cxcore.h
-/usr/include/opencv4/opencv2/core/cxcore.h
-opencv2/core/utility.hpp
-/usr/include/opencv4/opencv2/core/opencv2/core/utility.hpp
 
 /usr/include/opencv4/opencv2/core/cuda.hpp
 opencv2/core.hpp
@@ -383,24 +355,6 @@ opencv2/core/cvstd.hpp
 /usr/include/opencv4/opencv2/core/opencv2/core/cvstd.hpp
 opencv2/core/matx.hpp
 /usr/include/opencv4/opencv2/core/opencv2/core/matx.hpp
-
-/usr/include/opencv4/opencv2/core/types_c.h
-ipl.h
--
-ipl/ipl.h
--
-opencv2/core/cvdef.h
-/usr/include/opencv4/opencv2/core/opencv2/core/cvdef.h
-assert.h
--
-stdlib.h
--
-string.h
--
-float.h
--
-opencv2/core.hpp
-/usr/include/opencv4/opencv2/core/opencv2/core.hpp
 
 /usr/include/opencv4/opencv2/core/utility.hpp
 opencv2/core.hpp
@@ -920,12 +874,6 @@ opencv2/imgcodecs.hpp
 opencv2/videoio.hpp
 /usr/include/opencv4/opencv2/opencv2/videoio.hpp
 
-/usr/include/opencv4/opencv2/highgui/highgui_c.h
-opencv2/core/core_c.h
-/usr/include/opencv4/opencv2/highgui/opencv2/core/core_c.h
-opencv2/imgproc/imgproc_c.h
-/usr/include/opencv4/opencv2/highgui/opencv2/imgproc/imgproc_c.h
-
 /usr/include/opencv4/opencv2/imgcodecs.hpp
 opencv2/core.hpp
 /usr/include/opencv4/opencv2/opencv2/core.hpp
@@ -933,14 +881,6 @@ opencv2/core.hpp
 /usr/include/opencv4/opencv2/imgproc.hpp
 opencv2/core.hpp
 /usr/include/opencv4/opencv2/opencv2/core.hpp
-
-/usr/include/opencv4/opencv2/imgproc/imgproc_c.h
-opencv2/imgproc/types_c.h
-/usr/include/opencv4/opencv2/imgproc/opencv2/imgproc/types_c.h
-
-/usr/include/opencv4/opencv2/imgproc/types_c.h
-opencv2/core/core_c.h
-/usr/include/opencv4/opencv2/imgproc/opencv2/core/core_c.h
 
 /usr/include/opencv4/opencv2/ml.hpp
 opencv2/core.hpp
@@ -1201,8 +1141,6 @@ opencv2/imgproc.hpp
 /usr/include/opencv4/opencv2/videoio.hpp
 opencv2/core.hpp
 /usr/include/opencv4/opencv2/opencv2/core.hpp
-
-/usr/include/opencv4/opencv2/videoio/legacy/constants_c.h
 
 /usr/include/opencv4/opencv2/videostab.hpp
 opencv2/videostab/stabilizer.hpp
