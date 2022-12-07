@@ -51,6 +51,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/aruco_gige_cam_calibration.dir/DependInfo.cmake"
   "CMakeFiles/demo_aruco.dir/DependInfo.cmake"
   )

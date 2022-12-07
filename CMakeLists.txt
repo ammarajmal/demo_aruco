@@ -21,8 +21,8 @@ add_executable(demo_aruco src/demo_aruco.cpp)
 target_link_libraries(demo_aruco ${GIGE_CAM} ${OpenCV_LIBRARIES})
 
 
-add_executable(aruco_gige_cam_calibration src/aruco_gige_cam_calibration.cpp)
-target_link_libraries(aruco_gige_cam_calibration ${GIGE_CAM} ${OpenCV_LIBRARIES})
+# add_executable(aruco_gige_cam_calibration src/aruco_gige_cam_calibration.cpp)
+# target_link_libraries(aruco_gige_cam_calibration ${GIGE_CAM} ${OpenCV_LIBRARIES})
 
 
 

@@ -441,8 +441,10 @@ int main(int, char**)
 {
     Mat cameraMatrix = Mat::eye(3, 3, CV_64F);
     Mat distCoefficients;
-    loadCameraCalibration("CameraCalibration", cameraMatrix, distCoefficients);
-    gige_ARUCO_opencv(cameraMatrix, distCoefficients, arucoSquareDimension);
+
+    gige_aruco_detector();
+    // loadCameraCalibration("CameraCalibration", cameraMatrix, distCoefficients);
+    // gige_ARUCO_opencv(cameraMatrix, distCoefficients, arucoSquareDimension);
 
 
     // gige_aruco_detector();

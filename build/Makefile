@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named aruco_gige_cam_calibration
-
-# Build rule for target.
-aruco_gige_cam_calibration: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 aruco_gige_cam_calibration
-.PHONY : aruco_gige_cam_calibration
-
-# fast build rule for target.
-aruco_gige_cam_calibration/fast:
-	$(MAKE) -f CMakeFiles/aruco_gige_cam_calibration.dir/build.make CMakeFiles/aruco_gige_cam_calibration.dir/build
-.PHONY : aruco_gige_cam_calibration/fast
-
-#=============================================================================
 # Target rules for targets named demo_aruco
 
 # Build rule for target.
@@ -135,33 +122,6 @@ demo_aruco: cmake_check_build_system
 demo_aruco/fast:
 	$(MAKE) -f CMakeFiles/demo_aruco.dir/build.make CMakeFiles/demo_aruco.dir/build
 .PHONY : demo_aruco/fast
-
-src/aruco_gige_cam_calibration.o: src/aruco_gige_cam_calibration.cpp.o
-
-.PHONY : src/aruco_gige_cam_calibration.o
-
-# target to build an object file
-src/aruco_gige_cam_calibration.cpp.o:
-	$(MAKE) -f CMakeFiles/aruco_gige_cam_calibration.dir/build.make CMakeFiles/aruco_gige_cam_calibration.dir/src/aruco_gige_cam_calibration.cpp.o
-.PHONY : src/aruco_gige_cam_calibration.cpp.o
-
-src/aruco_gige_cam_calibration.i: src/aruco_gige_cam_calibration.cpp.i
-
-.PHONY : src/aruco_gige_cam_calibration.i
-
-# target to preprocess a source file
-src/aruco_gige_cam_calibration.cpp.i:
-	$(MAKE) -f CMakeFiles/aruco_gige_cam_calibration.dir/build.make CMakeFiles/aruco_gige_cam_calibration.dir/src/aruco_gige_cam_calibration.cpp.i
-.PHONY : src/aruco_gige_cam_calibration.cpp.i
-
-src/aruco_gige_cam_calibration.s: src/aruco_gige_cam_calibration.cpp.s
-
-.PHONY : src/aruco_gige_cam_calibration.s
-
-# target to generate assembly for a file
-src/aruco_gige_cam_calibration.cpp.s:
-	$(MAKE) -f CMakeFiles/aruco_gige_cam_calibration.dir/build.make CMakeFiles/aruco_gige_cam_calibration.dir/src/aruco_gige_cam_calibration.cpp.s
-.PHONY : src/aruco_gige_cam_calibration.cpp.s
 
 src/demo_aruco.o: src/demo_aruco.cpp.o
 
@@ -198,11 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... aruco_gige_cam_calibration"
 	@echo "... demo_aruco"
-	@echo "... src/aruco_gige_cam_calibration.o"
-	@echo "... src/aruco_gige_cam_calibration.i"
-	@echo "... src/aruco_gige_cam_calibration.s"
 	@echo "... src/demo_aruco.o"
 	@echo "... src/demo_aruco.i"
 	@echo "... src/demo_aruco.s"

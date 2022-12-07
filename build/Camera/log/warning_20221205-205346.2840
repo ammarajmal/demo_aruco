@@ -1,0 +1,5 @@
+Log file created at: 2022/12/05 20:53:46
+Running on machine: omenHP
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+W1205 20:53:46.196499  2845 CameraGigeBase.cpp:3914] Device:(name:MS-GE40GC-T-CL sn:052120120269 cam:192.168.1.181-1000-8000 nic:eno1-192.168.1.19-Unknown-1500)Heart Fail:1
+W1205 20:53:47.929883  2845 CameraGigeBase.cpp:3863] Device:(name:MS-GE40GC-T-CL sn:052120120269 cam:192.168.1.181-1000-8000 nic:eno1-192.168.1.19-1000M-1500)ReConnected, TolCount:1, Flag:1
